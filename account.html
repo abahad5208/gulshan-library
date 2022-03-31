@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>My Account | Gulshan Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    </head>
+
+    <body>
+        <div class="site-wrap">
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <a class="navbar-brand" href="index_loggedin.html">
+                            <img src="GL Logo.png" class="img-fluid" alt="Gulshan Library Logo">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="index_loggedin.html">Home</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle" href="#Browse" data-bs-toggle="collapse">Browse our books</a>
+                                    <ul class="dropdown-menu collapse" id="Browse">
+
+                                        <li><a class="dropdown-item" href="browse_loggedin.html">Latest</a></li>
+                                        <li><a class="dropdown-item" href="browse_loggedin.html">Popular</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+
+                                        <li>
+                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Genres">Genres</a>
+                                            <ul class="dropdown-menu collapse submenu" id="Genres">
+
+                                                <li>
+                                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Fiction">Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Fiction">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Action / Adventure</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Thriller / Mystery</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Classics / Historical</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Young / New Adult</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Comics / Graphic Novels</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#NonFiction">Non-Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="NonFiction">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">(Auto)biographies</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Self-help</a></li>
+                                                        <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Reference">Reference</a>
+                                                            <ul class="dropdown-menu collapse submenu" id="Reference">
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Mathematics</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Science</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">History</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Current Affairs / Politics</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Business / Finance</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Religion / Spirituality</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Travel Guides</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Hobbies</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Children">Children's Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Children">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Infants (0 - 3 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Toddlers (3 - 6 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Pre-School (6 - 9 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Juvenile (9 - 12 Years)</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Urdu">Urdu Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Urdu">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Urdu Adab (Literature)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Travelogues</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Current Affairs / Politics</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Religion / Spirituality</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Poetry</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Urdu Afsanay (Short-stories)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Children's Books</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">(Auto)biographies</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus_loggedin.html">About Us</a>
+                                </li>
+
+                            </ul>
+
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-cart" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-cart"></i> My Cart</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <div class="text-center" id="cart-empty">Looks like your cart is empty. Add some books to checkout!</div>
+                                        <table class="table table-hover text-center" id="cart-table" style="display: none;">
+                                            <tbody id="cart"></tbody>
+                                            <tfoot>
+                                                <tr><td colspan="3"><button class="btn btn-outline-warning"><i class="bi bi-cart-check-fill"></i> Checkout</button></td></tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-wishlist" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-clipboard"></i> My Wishlist</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <div class="text-center" id="wishlist-empty">Looks like your wishlist is empty. Add some books to your wishlist!</div>
+                                        <table class="table table-hover text-center" id="wishlist-table" style="display: none;">
+                                            <tbody id="wishlist"></tbody>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-person-circle"></i> My Account</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <a href="account.html" class="dropdown-item">Account Details</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="index.html">Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <h1 class="text-center py-3">John Doe's Account</h1>
+                <div class="row gy-3 gx-0 py-2" style="background-color: oldlace;">
+
+                    <div class="col-md-4 px-5">
+                        <h1>
+                            <img src="user.png" style="width: 100%; max-width: 300px; height: auto;">    
+                        </h1>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><strong>First Name: </strong>John</li><br>
+                            <li><strong>Last Name: </strong>Doe</li><br>
+                            <li><strong>Gender: </strong>Male</li><br>
+                            <li><strong>Address 1: </strong>Flat 103, Bldg. 21</li><br>
+                            <li><strong>Address 2: </strong>Al Falah Street</li><br>
+                            <li><strong>Subscription Plan: </strong>Advanced</li><br>
+                            <li><strong>Book Rentals This Month: </strong>0 / 5</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li><strong>DOB: </strong>27/06/1993</li><br>
+                            <li><strong>Contact No.: </strong>+92 123 4567890</li><br>
+                            <li><strong>CNIC No.: </strong>4201234567890</li><br>
+                            <li><strong>Email Address: </strong>example_email@gmail.com</li><br>
+                            <li><strong>Username: </strong>user</li><br>
+                            <li><strong>Standing: </strong>Neutral</li><br>
+                            <li><strong>Renewal Date: </strong>01/09/2021</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion py-2" id="account_info">
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#past_books" aria-expanded="false" aria-controls="past_books">
+                            <h2 class="accordion-header" id="past">Previous Rentals</h2>
+                        </button>
+                        <div id="past_books" class="accordion-collapse collapse px-3" aria-labelledby="past" data-bs-parent="#account_info">
+                            
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#current_books" aria-expanded="false" aria-controls="current_books">
+                            <h2 class="accordion-header" id="current">Current Rentals</h2>
+                        </button>
+                        <div id="current_books" class="accordion-collapse collapse px-3" aria-labelledby="past" data-bs-parent="#account_info">
+                            
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#buttons" aria-expanded="false" aria-controls="buttons">
+                            <h2 class="accordion-header" id="options_heading">Options</h2>
+                        </button>
+
+                        <div id="buttons" class="accordion-collapse collapse px-3" aria-labelledby="options_heading" data-bs-parent="#account_info">
+                            
+                            <div id="options" class="text-center">
+                                <button class="btn btn-outline-success btn-lg me-5" id="password_change">Change Password</button>
+                                <button class="btn btn-outline-success btn-lg mx-5" id="pers_change">Edit Personal Info</button>
+                                <button class="btn btn-outline-success btn-lg mx-5" id="renew">Renew Membership</button>
+                                <a class="btn btn-outline-danger btn-lg ms-5" href="index.html">Log Out</a>
+                            </div>
+
+                            <div id="p_change" class="text-center" style="display: none;">
+                                <form action="" onsubmit="event.preventDefault(); pass_verify();" method="post" id="p_changeForm">
+                                    <label for="old_password">Enter your old password: </label>
+                                    <input type="password" name="old_password" id="old_password" placeholder="Enter your old password" maxlength="50" minlength="8" pattern=".{8,50}" required size="30">
+                                    <br><br>
+    
+                                    <label for="new_password_1">Enter your new password: </label>
+                                    <input type="password" name="new_password_1" id="new_password_1" aria-describedby="passwordwarningBlock" placeholder="Enter your new password" maxlength="50" minlength="8" pattern=".{8,50}" required size="30">
+                                    <br><br>
+    
+                                    <label for="new_password_2">Re-enter your new password: </label>
+                                    <input type="password" name="new_password_2" id="new_password_2" aria-describedby="passwordwarningBlock" placeholder="Re-enter your new password" maxlength="50" minlength="8" pattern=".{8,50}" required size="30">
+                                    <br><br>
+    
+                                    <div id="passwordwarningBlock" class="form-text">
+                                        Your password can contain letters (small or capital), numbers and special characters, and have a size between 8-50 characters.
+                                    </div>
+    
+                                    <div class="row g-3 py-2">
+                                        <div class="col-md-1 mx-2">
+                                            <button class="btn btn-success" type="submit" form="p_changeForm" value="Submit" id="submit_button">Submit</button>
+                                        </div>
+                                        <div class="col-md-1 mx-2">
+                                            <button class="btn btn-danger" type="reset" form="p_changeForm" value="Cancel" id="pass_cancel">Cancel</button>
+                                        </div>
+                                    </div><br>
+                                    <div id="err_message" style="color: red;"></div><br>
+                                </form>
+                            </div>
+
+                            <div id="personal_change" style="display: none;">
+                                <form action="" onsubmit="event.preventDefault(); personal_verify();" method="post" id="personal_changeForm">
+    
+                                    <div class="col-md-6 input-group">
+                                        <label for="contact_no" class="me-2 d-flex align-items-center">Contact Number: </label>
+                                        <span class="input-group-text" id="country_code">+92</span>
+                                        <input type="tel" maxlength="10" id="contact_no" style="width: 35%;" class="col-md-6" placeholder="1234567890" aria-label="Contact Number" aria-describedby="contactwarningBlock" required pattern="\d*">
+                                    </div>
+        
+                                    <div id="contactwarningBlock" class="form-text mb-4">
+                                        Please enter a valid Pakistan phone number without any spaces or dashes. We will call you to verify subscriptions and deliveries.
+                                    </div>
+    
+                                    <div class="col-md-6 form-floating mb-4">
+                                        <input type="email" class="form-control" id="emailID" placeholder="name@example.com" required>
+                                        <label for="emailID">Email address</label>
+                                    </div>
+    
+                                    <div class="col-md-12 mb-4">
+                                        <label for="inputAddress" class="form-label">Address</label>
+                                        <textarea class="form-control" id="inputAddress" placeholder="1234 Main St" aria-describedby="addresswarningBlock" required></textarea>
+                                    </div>
+            
+                                    <div class="col-md-12">
+                                        <label for="inputAddress2" class="form-label">Address 2</label>
+                                        <textarea class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" aria-describedby="addresswarningBlock" required></textarea>
+                                    </div>
+            
+                                    <div id="addresswarningBlock" class="form-text">
+                                        Please ensure that your address is as accurate as possible, as we will deliver and collect books from you in person.<br>
+                                        We currently only operate in the city of Karachi, but look forward to expanding to other cities soon. We thank you for your patience.<br><br>
+                                        We will get in touch with you to verify these changes.
+                                    </div>
+
+                                    <div class="row g-3 py-2">
+                                        <div class="col-md-1 mx-2">
+                                            <button class="btn btn-success" type="submit" form="personal_changeForm" value="Submit" id="personal_submit_button">Update</button>
+                                        </div>
+                                        <div class="col-md-1 mx-2">
+                                            <button class="btn btn-danger" type="reset" form="personal_changeForm" value="Cancel" id="personal_cancel">Cancel</button>
+                                        </div>
+                                    </div><br>
+                                    <div id="personal_errors" style="color: red;"></div><br>
+    
+                                </form>
+                            </div>
+
+                            <div id="renew_membership" style="display: none;">
+                                <div class="col-md-8">
+                                    <select class="form-select" aria-label="Subscription plan selection" aria-describedby="planwarningBlock" id="sub_plan">
+                                        <option selected value="NA">Please select your subscription plan.</option>
+                                        <option value="Basic">Rs. 500.00/month &#8212; 3 book rentals per month, plus 2 additional for good standing. Rental period of 15 days.</option>
+                                        <option value="Advanced">Rs. 1000.00/month &#8212; 5 book rentals per month, plus 3 additional for good standing. Rental period of 25 days.</option>
+                                        <option value="Premium">Rs. 1500.00/month &#8212; 10 book rentals per month, plus 5 additional for good standing. Rental period of 35 days</option>
+                                    </select>
+                                </div>
+        
+                                <div id="planwarningBlock" class="form-text">
+                                    Rental periods may be negotiated if customer contacts the library after placing their order, dependent on the type and purpose of books. Reference books are generally non-negotiable.<br>
+                                    Retaining rented books beyond the negotiated deadlines will incur penalty fees.<br>
+                                    Customers can remain in good standing by returning the books ahead of time in good condition. This status is decided by the library staff and is non-negotiable. The customer will be informed of any change in their status via email.
+                                </div>
+
+                                <div class="row g-3 py-2">
+                                    <div class="col-md-2 mx-2">
+                                        <button class="btn btn-success" type="button" value="Submit" id="renewal_submit_button">Renew Membership</button>
+                                    </div>
+                                    <div class="col-md-2 mx-2">
+                                        <button class="btn btn-danger" type="button" value="Cancel" id="renewal_cancel">Cancel</button>
+                                    </div>
+                                </div><br>
+                                <div id="renewal_error" style="color: red;"></div><br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <footer class = "container-fluid mt-5">
+                <div class = "footer-wrap">
+                    Created by Abdul Ahad for Aptech Vision 2021.
+                </div>
+            </footer>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="JS pages\account_options.js"></script>
+    </body>
+</html>

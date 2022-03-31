@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Registration | Gulshan Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        <div class="site-wrap">
+
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <a class="navbar-brand" href="index.html">
+                            <img src="GL Logo.png" class="img-fluid" alt="Gulshan Library Logo">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle" href="#Browse" data-bs-toggle="collapse">Browse our books</a>
+                                    <ul class="dropdown-menu collapse" id="Browse">
+
+                                        <li><a class="dropdown-item" href="browse.html">Latest</a></li>
+                                        <li><a class="dropdown-item" href="browse.html">Popular</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+
+                                        <li>
+                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Genres">Genres</a>
+                                            <ul class="dropdown-menu collapse submenu" id="Genres">
+
+                                                <li>
+                                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Fiction">Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Fiction">
+                                                        <li><a class="dropdown-item" href="browse.html">Action / Adventure</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Thriller / Mystery</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Classics / Historical</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Young / New Adult</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Comics / Graphic Novels</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#NonFiction">Non-Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="NonFiction">
+                                                        <li><a class="dropdown-item" href="browse.html">(Auto)biographies</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Self-help</a></li>
+                                                        <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Reference">Reference</a>
+                                                            <ul class="dropdown-menu collapse submenu" id="Reference">
+                                                                <li><a class="dropdown-item" href="browse.html">Mathematics</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Science</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">History</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Current Affairs / Politics</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Business / Finance</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Religion / Spirituality</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Travel Guides</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Hobbies</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Children">Children's Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Children">
+                                                        <li><a class="dropdown-item" href="browse.html">Infants (0 - 3 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Toddlers (3 - 6 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Pre-School (6 - 9 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Juvenile (9 - 12 Years)</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Urdu">Urdu Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Urdu">
+                                                        <li><a class="dropdown-item" href="browse.html">Urdu Adab (Literature)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Travelogues</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Current Affairs / Politics</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Religion / Spirituality</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Poetry</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Urdu Afsanay (Short-stories)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Children's Books</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">(Auto)biographies</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus.html">About Us</a>
+                                </li>
+
+                            </ul>
+
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Log in</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+
+                                        <form class="px-4 py-3" onsubmit="return false">
+
+                                            <div class="mb-3">
+                                                <label for="u_name" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="u_name" placeholder="Enter your username">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="p_word" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="p_word" placeholder="Enter your password">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                                    <label class="form-check-label" for="dropdownCheck">Remember me</label>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary" id="login">Sign in</button>
+
+                                        </form>
+
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="forgot.html">Forgot password?</a>
+
+                                    </div>
+                                </li>
+
+                                <span class="navbar-text">
+                                    or
+                                </span>
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="registration.html">Register</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <h1 class="text-center py-2">Registration Form</h1>
+                <form id="regform" action="/register_success.html" method="post" onsubmit="event.preventDefault(); verify()">
+                    <div class="row g-3 py-2">
+
+                        <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="fname" placeholder="First name" aria-label="First name" pattern="[a-zA-Z]+" onkeydown="return alphaOnly(event);" required>
+                                <label for="fname">First Name</label>
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                                <input type="text" class="form-control" id="lname" placeholder="Last name" aria-label="Last name" pattern="[a-zA-Z]+" onkeydown="return alphaOnly(event);" required>
+                                <label for="lname">Last Name</label>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="contact_no">Contact Number</label>
+
+                            <div class="input-group mb-12">
+                                <span class="input-group-text" id="country_code">+92</span>
+                                <input type="tel" maxlength="10" id="contact_no" class="form-control" placeholder="1234567890" aria-label="Contact Number" aria-describedby="contactwarningBlock" pattern="\d*" required>
+                            </div>
+
+                            <div id="contactwarningBlock" class="form-text">
+                                Please enter a valid Pakistan phone number without any spaces or dashes. We will call you to verify subscriptions and deliveries.
+                            </div>
+                        </div>
+
+                        <div>
+                            <fieldset class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                                <div class="col-sm-10">
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male">
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Male
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            Female
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender_other" value="other">
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Other
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                            <input type="number" class="form-control" id="cnic" placeholder="CNIC no." maxlength="13" aria-label="CNIC number" aria-describedby="cnicwarningBlock" oninput="this.value=this.value.slice(0,this.maxLength)" required>
+                            <label for="cnic">CNIC number</label>
+                        </div>
+
+                        <div class="col-md-3 form-floating">
+                            <input type="date" class="form-control" id="birth" name="birth" min="1900-01-01" required>
+                            <label for="birth">Date of Birth</label>
+                        </div>
+
+                        <div id="cnicwarningBlock" class="form-text">
+                            Please enter your 13-digit CNIC number without any spaces or dashes. We will use it for verification purposes.
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <textarea class="form-control" id="inputAddress" placeholder="1234 Main St" aria-describedby="addresswarningBlock" required></textarea>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="inputAddress2" class="form-label">Address 2</label>
+                            <textarea class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" aria-describedby="addresswarningBlock" required></textarea>
+                        </div>
+
+                        <div id="addresswarningBlock" class="form-text">
+                            Please ensure that your address is as accurate as possible, as we will deliver and collect books from you in person.<br>
+                            We currently only operate in the city of Karachi, but look forward to expanding to other cities soon. We thank you for your patience.
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                            <input type="email" class="form-control" id="emailID" placeholder="name@example.com" required>
+                            <label for="emailID">Email address</label>
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                            <input type="text" class="form-control" id="username" maxlength="12" placeholder="Enter your desired username" aria-describedby="userwarningBlock" pattern="[a-zA-Z0-9]{0,12}" required>
+                            <label for="username">Username</label>
+                        </div>
+
+                        <div id="userwarningBlock" class="form-text">
+                            Your username can contain letters (small or capital) and numbers only, and have a max size of 12 characters.
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                            <input type="password" class="form-control" id="Password1" placeholder="Password" maxlength="50" minlength="8" aria-describedby="passwordwarningBlock" pattern=".{8,50}" required>
+                            <label for="Password1">Password</label>
+                        </div>
+
+                        <div class="col-md-6 form-floating">
+                            <input type="password" class="form-control" id="Password2" placeholder="Re-enter password" maxlength="50" minlength="8" aria-describedby="passwordwarningBlock" pattern=".{8,50}" required>
+                            <label for="Password2">Re-enter Password</label>
+                        </div>
+
+                        <div id="passwordwarningBlock" class="form-text">
+                            Your password can contain letters (small or capital), numbers and special characters, and have a size between 8-50 characters.
+                        </div>
+
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Subscription plan selection" aria-describedby="planwarningBlock" id="sub_plan">
+                                <option selected value="NA">Please select your subscription plan.</option>
+                                <option value="Basic">Rs. 500.00/month &#8212; 3 book rentals per month, plus 2 additional for good standing. Rental period of 15 days.</option>
+                                <option value="Advanced">Rs. 1000.00/month &#8212; 5 book rentals per month, plus 3 additional for good standing. Rental period of 25 days.</option>
+                                <option value="Premium">Rs. 1500.00/month &#8212; 10 book rentals per month, plus 5 additional for good standing. Rental period of 35 days.</option>
+                            </select>
+                        </div>
+
+                        <div id="planwarningBlock" class="form-text">
+                            Rental periods may be negotiated if customer contacts the library after placing their order, dependent on the type and purpose of books. Reference books are generally non-negotiable.<br>
+                            Retaining rented books beyond the negotiated deadlines will incur penalty fees.<br>
+                            Customers can remain in good standing by returning the books ahead of time in good condition. This status is decided by the library staff and is non-negotiable. The customer will be informed of any change in their status via email.
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="row g-3 py-2">
+                    <div class="col-md-1">
+                        <button class="btn btn-success" type="submit" form="regform" value="Submit" id="submit_button">Submit</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-danger" type="reset" form="regform" value="Cancel">Cancel</button>
+                    </div>
+                </div><br>
+                <div id="message" style="color: red;"></div><br>
+
+            </main>
+
+            <footer class = "container-fluid mt-2">
+                <div class = "footer-wrap">
+                    Created by Abdul Ahad for Aptech Vision 2021.
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="JS pages\registration.js" type="text/javascript"></script>
+        <script src="JS pages\login.js" type="text/javascript"></script>
+        
+    </body>
+</html>

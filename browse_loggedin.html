@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>Browse our Books | Gulshan Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .container-fluid > .row {
+                clear:both
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="site-wrap">
+            <!-- Modal -->
+
+            <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="bookDetailsModal" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bookDetailsModal">Book Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <table class="table table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img class="bk-img" src="placeholder" alt="placeholder" id="bk-image">
+                                        </td>
+                                        <td colspan="3">
+                                            <table class="table table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Name: </th>
+                                                        <td id="bk-name"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">ISBN: </th>
+                                                        <td id="bk-isbn"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Author(s): </th>
+                                                        <td id="bk-author"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Publisher: </th>
+                                                        <td id="bk-pub"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Genre(s): </th>
+                                                        <td id="bk-genre"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Description: </th>
+                                                        <td id="bk-desc"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-outline-danger" id="modal-cart"><i class="bi bi-cart-plus"></i> Add to cart</button>
+                            <button class="btn btn-outline-success" id="modal-wishlist"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header -->
+
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <a class="navbar-brand" href="index_loggedin.html">
+                            <img src="GL Logo.png" class="img-fluid" alt="Gulshan Library Logo">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index_loggedin.html">Home</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle active" aria-current="page" href="#Browse" data-bs-toggle="collapse">Browse our books</a>
+                                    <ul class="dropdown-menu collapse" id="Browse">
+
+                                        <li><a class="dropdown-item" href="browse_loggedin.html">Latest</a></li>
+                                        <li><a class="dropdown-item" href="browse_loggedin.html">Popular</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+
+                                        <li>
+                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Genres">Genres</a>
+                                            <ul class="dropdown-menu collapse submenu" id="Genres">
+
+                                                <li>
+                                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Fiction">Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Fiction">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Action / Adventure</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Thriller / Mystery</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Classics / Historical</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Young / New Adult</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Comics / Graphic Novels</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#NonFiction">Non-Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="NonFiction">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">(Auto)biographies</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Self-help</a></li>
+                                                        <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Reference">Reference</a>
+                                                            <ul class="dropdown-menu collapse submenu" id="Reference">
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Mathematics</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Science</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">History</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Current Affairs / Politics</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Business / Finance</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Religion / Spirituality</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Travel Guides</a></li>
+                                                                <li><a class="dropdown-item" href="browse_loggedin.html">Hobbies</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Children">Children's Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Children">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Infants (0 - 3 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Toddlers (3 - 6 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Pre-School (6 - 9 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Juvenile (9 - 12 Years)</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Urdu">Urdu Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Urdu">
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Urdu Adab (Literature)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Travelogues</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Current Affairs / Politics</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Religion / Spirituality</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Poetry</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Urdu Afsanay (Short-stories)</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">Children's Books</a></li>
+                                                        <li><a class="dropdown-item" href="browse_loggedin.html">(Auto)biographies</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aboutus_loggedin.html">About Us</a>
+                                </li>
+
+                            </ul>
+
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-cart" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-cart"></i> My Cart</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <div class="text-center" id="cart-empty">Looks like your cart is empty. Add some books to checkout!</div>
+                                        <table class="table table-hover text-center" id="cart-table" style="display: none;">
+                                            <tbody id="cart"></tbody>
+                                            <tfoot>
+                                                <tr><td colspan="3"><button class="btn btn-outline-warning" id="checkout"><i class="bi bi-cart-check-fill"></i> Checkout</button></td></tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-wishlist" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-clipboard"></i> My Wishlist</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <div class="text-center" id="wishlist-empty">Looks like your wishlist is empty. Add some books to your wishlist!</div>
+                                        <table class="table table-hover text-center" id="wishlist-table" style="display: none;">
+                                            <tbody id="wishlist"></tbody>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink-account" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="bi bi-person-circle"></i> My Account</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+                                        <a href="account.html" class="dropdown-item">Account Details</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="browse.html">Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+
+            <main><br>
+                <button class="btn btn-outline-warning btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter" aria-controls="filter">Filter</button>
+
+                <!-- Sort and show section -->
+                
+                    <div class="row float-end py-4" style="width: 100%">
+                        <div class="col-md-2" style="width: auto; padding: 0; margin-top: 5px;">
+                            <label for="sort">Sort By:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" name="sort" id="sort">
+                                <option value="" selected="selected">Latest</option>
+                                <option value="">Popular</option>
+                                <option value="">Name (A - Z)</option>
+                                <option value="">Name (Z - A)</option>
+                                <option value="">Rating (High to Low)</option>
+                                <option value="">Rating (Low to High)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2" style="width: auto; padding: 0; margin-top: 5px;">
+                            <label for="show_count">Show:</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" name="show_count" id="show_count">
+                                <option value="">25</option>
+                                <option value="" selected="selected">30</option>
+                                <option value="">50</option>
+                                <option value="">75</option>
+                                <option value="">100</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                <!-- Main Page Content -->
+                <div class="d-none d-md-block"><br></div>
+                <div class="container-fluid">
+                    <div class="row g-3 py-4" id="main-content">
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="president_daughter" data-bs-isbn="978-0316540711" data-bs-title="The President's Daughter" data-bs-author1="James Patterson" data-bs-author2="Bill Clinton" data-bs-publisher="Little, Brown and Company and Knopf" data-bs-genre="Fiction - Action / Adventure<br>Fiction - Thriller / Mystery" data-bs-desc="Matthew Keating, a one-time Navy SEAL—and a past president—has always defended his family as staunchly as he has his country. Now those defenses are under attack.<br><br>A madman abducts Keating’s teenage daughter, Melanie—turning every parent’s deepest fear into a matter of national security. As the world watches in real time, Keating embarks on a one-man special-ops mission that tests his strengths: as a leader, a warrior, and a father.">
+                                <img src="Books/president_daughter.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The President's Daughter</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="somebodys_daughter" data-bs-isbn="978-1250305978" data-bs-title="Somebody's Daughter" data-bs-author1="Ashley C. Ford" data-bs-author2="" data-bs-publisher="Flatiron Books: An Oprah Book" data-bs-genre="Non-Fiction - (Auto)biography" data-bs-desc="Through poverty, adolescence, and a fraught relationship with her mother, Ashley C. Ford wishes she could turn to her father for hope and encouragement. There are just a few problems: he’s in prison, and she doesn’t know what he did to end up there. She doesn’t know how to deal with the incessant worries that keep her up at night, or how to handle the changes in her body that draw unwanted attention from men. In her search for unconditional love, Ashley begins dating a boy her mother hates. When the relationship turns sour, he assaults her. Still reeling from the rape, which she keeps secret from her family, Ashley desperately searches for meaning in the chaos. Then, her grandmother reveals the truth about her father’s incarceration . . . and Ashley’s entire world is turned upside down.<br><br>Somebody’s Daughter steps into the world of growing up a poor Black girl in Indiana with a family fragmented by incarceration, exploring how isolating and complex such a childhood can be. As Ashley battles her body and her environment, she embarks on a powerful journey to find the threads between who she is and what she was born into, and the complicated familial love that often binds them.">
+                                <img src="Books/somebodys_daughter.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Somebody's Daughter</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="sweetness_water" data-bs-isbn="978-0316362481" data-bs-title="The Sweetness of Water" data-bs-author1="Nathan Harris" data-bs-author2="" data-bs-publisher="Little, Brown and Company" data-bs-genre="Fiction - Classics / Historical" data-bs-desc="In the waning days of the Civil War, brothers Prentiss and Landry—freed by the Emancipation Proclamation—seek refuge on the homestead of George Walker and his wife, Isabelle. The Walkers, wracked by the loss of their only son to the war, hire the brothers to work their farm, hoping through an unexpected friendship to stanch their grief. Prentiss and Landry, meanwhile, plan to save money for the journey north and a chance to reunite with their mother, who was sold away when they were boys.<br><br>Parallel to their story runs a forbidden romance between two Confederate soldiers. The young men, recently returned from the war to the town of Old Ox, hold their trysts in the woods. But when their secret is discovered, the resulting chaos, including a murder, unleashes convulsive repercussions on the entire community. In the aftermath of so much turmoil, it is Isabelle who emerges as an unlikely leader, proffering a healing vision for the land and for the newly free citizens of Old Ox.">
+                                <img src="Books/sweetness_water.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Sweetness of Water</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="the_maidens" data-bs-isbn="978-1250304452" data-bs-title="The Maidens" data-bs-author1="Alex Michaelides" data-bs-author2="" data-bs-publisher="Celadon Books" data-bs-genre="Fiction - Thriller / Mystery" data-bs-desc="Edward Fosca is a murderer. Of this Mariana is certain. But Fosca is untouchable. A handsome and charismatic Greek tragedy professor at Cambridge University, Fosca is adored by staff and students alike―particularly by the members of a secret society of female students known as The Maidens.<br><br>Mariana Andros is a brilliant but troubled group therapist who becomes fixated on The Maidens when one member, a friend of Mariana’s niece Zoe, is found murdered in Cambridge.<br><br>Mariana, who was once herself a student at the university, quickly suspects that behind the idyllic beauty of the spires and turrets, and beneath the ancient traditions, lies something sinister. And she becomes convinced that, despite his alibi, Edward Fosca is guilty of the murder. But why would the professor target one of his students? And why does he keep returning to the rites of Persephone, the maiden, and her journey to the underworld?<br><br>When another body is found, Mariana’s obsession with proving Fosca’s guilt spirals out of control, threatening to destroy her credibility as well as her closest relationships. But Mariana is determined to stop this killer, even if it costs her everything―including her own life.">
+                                <img src="Books/the_maidens.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Maidens</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="the_corridor" data-bs-isbn="978-9698729103" data-bs-title="The Corridor" data-bs-author1="Wasif M. Khan" data-bs-author2="" data-bs-publisher="Liberty Publishing" data-bs-genre="Fiction - Action / Adventure<br>Fiction - Thriller / Mystery" data-bs-desc="Set in post-9/11 Afghanistan, The Corridor is Pakistan's first interactive horror novella that combines audio, visual and text-based content to narrate the story of an American defense contractor, Alan Baker, and a young Afghan girl, Maha Gul Afridi, who find themselves stranded in a remote, zombie-infested valley in the Badakhshan province of Afghanistan. Alan is a former US Army soldier who is dispatched to Afghanistan, with a team of private security contractors, to capture a notorious Taliban commander with a large bounty on his head. Maha Gul is an Afghan girl whose village is ravaged by a biological weapons experiment gone horribly wrong. Narrated by a former UN officer with knowledge of the incident – based on Alan’s audio logs and Maha Gul’s eyewitness account – the story follows Alan and Maha Gul’s ordeal as they struggle to escape from the valley in the face of overwhelming odds.">
+                                <img src="Books/the_corridor.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Corridor</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="mountains_echoed" data-bs-isbn="978-1594632112" data-bs-title="And the Mountains Echoed" data-bs-author1="Khaled Hosseini" data-bs-author2="" data-bs-publisher="Riverhead Books" data-bs-genre="Fiction - Classics / Historical" data-bs-desc="The novel is broken into nine chapters, each told from the perspective of a different character. The novel considers the lengths parents should go to to protect their children from a life of suffering, and questions if being torn from one's family is a better fate than grinding poverty.">
+                                <img src="Books/mountains_echoed.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">And the Mountains Echoed</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="malcolmx_autobiography" data-bs-isbn="978-0141185439" data-bs-title="The Autobiography Of Malcolm X" data-bs-author1="Malcolm X (El-Hajj Malik El-Shabazz)" data-bs-author2="Alex Haley" data-bs-publisher="Penguin Books" data-bs-genre="Non-Fiction - (Auto)biography" data-bs-desc="From hustling, drug addiction and armed violence in America's black ghettos Malcolm X turned, in a dramatic prison conversion, to the puritanical fervour of the Black Muslims. As their spokesman he became identified in the white press as a terrifying teacher of race hatred; but to his direct audience, the oppressed American blacks, he brought hope and self-respect. This autobiography (written with Alex Haley) reveals his quick-witted integrity, usually obscured by batteries of frenzied headlines, and the fierce idealism which led him to reject both liberal hypocrisies and black racialism.<br><br>Vilified by his critics as an anti-white demagogue, Malcolm X gave a voice to unheard African-Americans, bringing them pride, hope and fearlessness, and remains an inspirational and controversial figure.">
+                                <img src="Books/malcolmx_autobiography.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Autobiography of Malcolm X</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="gone_girl" data-bs-isbn="978-0753827666" data-bs-title="Gone Girl" data-bs-author1="Gillian Flynn" data-bs-author2="" data-bs-publisher="W&N" data-bs-genre="Fiction - Thriller / Mystery" data-bs-desc="Who are you? What have we done to each other? These are the questions Nick Dunne finds himself asking on the morning of his fifth wedding anniversary, when his wife Amy suddenly disappears. The police suspect Nick. Amy's friends reveal that she was afraid of him, that she kept secrets from him. He swears it isn't true. A police examination of his computer shows strange searches. He says they weren't made by him. And then there are the persistent calls on his mobile phone. So what really did happen to Nick's beautiful wife?">
+                                <img src="Books/gone_girl.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Gone Girl</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="lost_names" data-bs-isbn="978-1982131906" data-bs-title="The Book of Lost Names" data-bs-author1="Kristin Harmel" data-bs-author2="" data-bs-publisher="Gallery Books" data-bs-genre="Fiction - Classics / Historical" data-bs-desc="Eva Traube Abrams, a semi-retired librarian in Florida, is shelving books when her eyes lock on a photograph in the New York Times. She freezes; it’s an image of a book she hasn’t seen in more than sixty years—a book she recognizes as The Book of Lost Names.<br><br>The accompanying article discusses the looting of libraries by the Nazis across Europe during World War II—an experience Eva remembers well—and the search to reunite people with the texts taken from them so long ago. The book in the photograph, an eighteenth-century religious text thought to have been taken from France in the waning days of the war, is one of the most fascinating cases. Now housed in Berlin’s Zentral- und Landesbibliothek library, it appears to contain some sort of code, but researchers don’t know where it came from—or what the code means. Only Eva holds the answer, but does she have the strength to revisit old memories?<br><br>As a graduate student in 1942, Eva was forced to flee Paris and find refuge in a small mountain town in the Free Zone, where she began forging identity documents for Jewish children fleeing to neutral Switzerland. But erasing people comes with a price, and along with a mysterious, handsome forger named Rémy, Eva decides she must find a way to preserve the real names of the children who are too young to remember who they really are. The records they keep in The Book of Lost Names will become even more vital when the resistance cell they work for is betrayed and Rémy disappears.">
+                                <img src="Books/lost_names.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Book of Lost Names</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="last_mughal" data-bs-isbn="978-1408800928" data-bs-title="The Last Mughal: The Fall of a Dynasty: Delhi, 1857" data-bs-author1="William Dalrymple" data-bs-author2="" data-bs-publisher="Bloomsbury Publishing PLC" data-bs-genre="Non-Fiction - Reference - History" data-bs-desc="The last Mughal emperor, Zafar, came to the throne when the political power of the Mughals was already in steep decline. Nonetheless, Zafar—a mystic, poet, and calligrapher of great accomplishment—created a court of unparalleled brilliance, and gave rise to perhaps the greatest literary renaissance in modern Indian history. All the while, the British were progressively taking over the Emperor's power. When, in May 1857, Zafar was declared the leader of an uprising against the British, he was powerless to resist though he strongly suspected that the action was doomed. Four months later, the British took Delhi, the capital, with catastrophic results. With an unsurpassed understanding of British and Indian history, Dalrymple crafts a provocative, revelatory account of one the bloodiest upheavals in history.">
+                                <img src="Books/last_mughal.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Last Mughal</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="fault_stars" data-bs-isbn="978-0141345659" data-bs-title="The Fault in Our Stars" data-bs-author1="John Green" data-bs-author2="" data-bs-publisher="Penguin Books" data-bs-genre="Fiction - Young / New Adult" data-bs-desc="Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel’s story is about to be completely re-written.">
+                                <img src="Books/fault_stars.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">The Fault in our Stars</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="game_thrones" data-bs-isbn="978-0007548231" data-bs-title="Game of Thrones" data-bs-author1="George R.R. Martin" data-bs-author2="" data-bs-publisher="Harper Collins" data-bs-genre="Fiction - Action / Adventure<br>Fiction - Thriller / Mystery<br>Fiction - Classics / Historical" data-bs-desc="Winter is coming. Such is the stern motto of House Stark, the northernmost of the fiefdoms that owe allegiance to King Robert Baratheon in far-off King’s Landing. There Eddard Stark of Winterfell rules in Robert’s name. There his family dwells in peace and comfort: his proud wife, Catelyn; his sons Robb, Brandon, and Rickon; his daughters Sansa and Arya; and his bastard son, Jon Snow. Far to the north, behind the towering Wall, lie savage Wildings and worse—unnatural things relegated to myth during the centuries-long summer, but proving all too real and all too deadly in the turning of the season.<br><br>Yet a more immediate threat lurks to the south, where Jon Arryn, the Hand of the King, has died under mysterious circumstances. Now Robert is riding north to Winterfell, bringing his queen, the lovely but cold Cersei, his son, the cruel, vainglorious Prince Joffrey, and the queen’s brothers Jaime and Tyrion of the powerful and wealthy House Lannister—the first a swordsman without equal, the second a dwarf whose stunted stature belies a brilliant mind. All are heading for Winterfell and a fateful encounter that will change the course of kingdoms.<br><br>Meanwhile, across the Narrow Sea, Prince Viserys, heir of the fallen House Targaryen, which once ruled all of Westeros, schemes to reclaim the throne with an army of barbarian Dothraki—whose loyalty he will purchase in the only coin left to him: his beautiful yet innocent sister, Daenerys.">
+                                <img src="Books/game_thrones.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Game of Thrones</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="chocolate_factory" data-bs-isbn="978-0142410318" data-bs-title="Charlie and the Chocolate Factory" data-bs-author1="Roald Dahl" data-bs-author2="" data-bs-publisher="Puffin Books" data-bs-genre="Children's Books - Juveniles (9 - 12 Years)" data-bs-desc="Willy Wonka's famous chocolate factory is opening at last! But only five lucky children will be allowed inside. And the winners are: Augustus Gloop, an enormously fat boy whose hobby is eating; Veruca Salt, a spoiled-rotten brat whose parents are wrapped around her little finger; Violet Beauregarde, a dim-witted gum-chewer with the fastest jaws around; Mike Teavee, a toy pistol-toting gangster-in-training who is obsessed with television; and Charlie Bucket, Our Hero, a boy who is honest and kind, brave and true, and good and ready for the wildest time of his life!">
+                                <img src="Books/chocolate_factory.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Charlie and the Chocolate Factory</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="giant_peach" data-bs-isbn="978-0142410363" data-bs-title="James and the Giant Peach" data-bs-author1="Roald Dahl" data-bs-author2="" data-bs-publisher="Puffin Books" data-bs-genre="Children's Books - Juveniles (9 - 12 Years)" data-bs-desc="After James Henry Trotter's parents are tragically eaten by a rhinoceros, he goes to live with his two horrible aunts, Spiker and Sponge. Life there is no fun, until James accidentally drops some magic crystals by the old peach tree and strange things start to happen. The peach at the top of the tree begins to grow, and before long it's as big as a house. Inside, James meets a bunch of oversized friends—Grasshopper, Centipede, Ladybug, and more. With a snip of the stem, the peach starts rolling away, and the great adventure begins!">
+                                <img src="Books/giant_peach.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">James and the Giant Peach</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="matilda" data-bs-isbn="978-0142410370" data-bs-title="Matilda" data-bs-author1="Roald Dahl" data-bs-author2="" data-bs-publisher="Puffin Books" data-bs-genre="Children's Books - Early Readers (6 - 9 Years)" data-bs-desc="Matilda is a sweet, exceptional young girl, but her parents think she's just a nuisance. She expects school to be different but there she has to face Miss Trunchbull, a kid-hating terror of a headmistress. When Matilda is attacked by the Trunchbull she suddenly discovers she has a remarkable power with which to fight back. It'll take a superhuman genius to give Miss Trunchbull what she deserves and Matilda may be just the one to do it!">
+                                <img src="Books/matilda.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Matilda</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <a href="#detailsModal" role="button" data-bs-toggle="modal" data-bs-book="mr_fox" data-bs-isbn="978-0142410349" data-bs-title="Fantastic Mr. Fox" data-bs-author1="Roald Dahl" data-bs-author2="" data-bs-publisher="Puffin Books" data-bs-genre="Children's Books - Early Readers (6 - 9 Years)" data-bs-desc="Someone's been stealing from the three meanest farmers around, and they know the identity of the thief—it's Fantastic Mr. Fox! Working alone they could never catch him; but now fat Boggis, squat Bunce, and skinny Bean have joined forces, and they have Mr. Fox and his family surrounded. What they don't know is that they're not dealing with just any fox—Mr. Fox would rather die than surrender. Only the most fantastic plan can save him now.">
+                                <img src="Books/mr_fox.jpg" class="bk-grid">
+                                <p class="fw-bold fst-italic">Fantastic Mr. Fox</p>
+                            </a>
+                            <button class="btn btn-outline-danger add-cart-main"><i class="bi bi-cart-plus"></i> Add to cart</button><br>
+                            <button class="btn btn-outline-success add-wishlist-main mt-2"><i class="bi bi-clipboard-plus"></i> Add to wishlist</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Filter -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="filter" aria-labelledby="filter" style="background-color: black; color: white;">
+                    <div class="offcanvas-header">
+                      <h3 id="offcanvasTopLabel">Filter Books Catalogue</h3>
+                      <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form action="http://127.0.0.1:5500/browse_loggedin.html" method="get" id="filterform">
+
+                            <div class="row g-2 py-2">
+                                <label for="isbn"><h4>ISBN</h4></label>
+                                <div class="col-md-12">
+                                    <input type="number" class="form-control" id="isbn" placeholder="ISBN no." maxlength="13" aria-label="ISBN number" oninput="this.value=this.value.slice(0,this.maxLength)">
+                                </div>
+                            </div>
+
+                            <div class="row g-2 py-2">
+                                <h4>Availability</h4>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="stockin" checked>
+                                        <label class="form-check-label" for="stockin">
+                                            In Stock
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="stockout">
+                                        <label class="form-check-label" for="stockout">
+                                            Out of Stock
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-2 py-2">
+                                <label for="authorname"><h4>Author</h4></label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="authorname" placeholder="Author Name" aria-label="Author Name">
+                                </div>
+                            </div>
+
+                            <div class="row g-2 py-2">
+                                <h4>Genre</h4>
+                                <div class="col-md-12" style="color: black !important">
+                                    <div class="accordion" id="genres">
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="fiction">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fiction-options" aria-expanded="true" aria-controls="fiction-options">
+                                                    Fiction
+                                                </button>
+                                            </h2>
+                                            <div id="fiction-options" class="accordion-collapse collapse show" aria-labelledby="fiction">
+                                                <div class="accordion-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="fic-action" id="fic-action">
+                                                        <label class="form-check-label" for="fic-action">
+                                                            Action / Adventure
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="fic-thriller" id="fic-thriller">
+                                                        <label class="form-check-label" for="fic-thriller">
+                                                            Thriller / Mystery
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="fic-classic" id="fic-classic">
+                                                        <label class="form-check-label" for="fic-classic">
+                                                            Classics / Historical
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="fic-young" id="fic-young">
+                                                        <label class="form-check-label" for="fic-young">
+                                                            Young / New Adult
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="fic-comic" id="fic-comic">
+                                                        <label class="form-check-label" for="fic-comic">
+                                                            Comics / Graphic Novels
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="nonfiction">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nonfiction-options" aria-expanded="true" aria-controls="nonfiction-options">
+                                                    Non-Fiction
+                                                </button>
+                                            </h2>
+                                            <div id="nonfiction-options" class="accordion-collapse collapse show" aria-labelledby="nonfiction">
+                                                <div class="accordion-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="nonfic-bio" id="nonfic-bio">
+                                                        <label class="form-check-label" for="nonfic-bio">
+                                                            (Auto)biographies
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="nonfic-help" id="nonfic-help">
+                                                        <label class="form-check-label" for="nonfic-help">
+                                                            Self-help
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-math" id="ref-math">
+                                                        <label class="form-check-label" for="ref-math">
+                                                            Reference - Mathematics
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-sci" id="ref-sci">
+                                                        <label class="form-check-label" for="ref-sci">
+                                                            Reference - Science
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-history" id="ref-history">
+                                                        <label class="form-check-label" for="ref-history">
+                                                            Reference - History
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-politics" id="ref-politics">
+                                                        <label class="form-check-label" for="ref-politics">
+                                                            Reference - Current Affairs / Politics
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-business" id="ref-business">
+                                                        <label class="form-check-label" for="ref-business">
+                                                            Reference - Business / Finance
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-religion" id="ref-religion">
+                                                        <label class="form-check-label" for="ref-religion">
+                                                            Reference - Religion / Spirituality
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-travel" id="ref-travel">
+                                                        <label class="form-check-label" for="ref-travel">
+                                                            Reference - Travel Guides
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="ref-hobby" id="ref-hobby">
+                                                        <label class="form-check-label" for="ref-hobby">
+                                                            Reference - Hobbies
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="children">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#children-options" aria-expanded="true" aria-controls="children-options">
+                                                    Children's Books
+                                                </button>
+                                            </h2>
+                                            <div id="children-options" class="accordion-collapse collapse show" aria-labelledby="children">
+                                                <div class="accordion-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="child-infant" id="child-infant">
+                                                        <label class="form-check-label" for="child-infant">
+                                                            Toddlers (0 - 3 Years)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="child-toddler" id="child-toddler">
+                                                        <label class="form-check-label" for="child-toddler">
+                                                            Pre-School (3 - 6 Years)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="child-preschool" id="child-preschool">
+                                                        <label class="form-check-label" for="child-preschool">
+                                                            Early Readers (6 - 9 Years)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="child-juvenile" id="child-juvenile">
+                                                        <label class="form-check-label" for="child-juvenile">
+                                                            Juveniles (9 - 12 Years)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="urdu">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#urdu-options" aria-expanded="true" aria-controls="urdu-options">
+                                                    Urdu Books
+                                                </button>
+                                            </h2>
+                                            <div id="urdu-options" class="accordion-collapse collapse show" aria-labelledby="urdu">
+                                                <div class="accordion-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-adab" id="urdu-adab">
+                                                        <label class="form-check-label" for="urdu-adab">
+                                                            Urdu Adab
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-travel" id="urdu-travel">
+                                                        <label class="form-check-label" for="urdu-travel">
+                                                            Travelogues
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-politics" id="urdu-politics">
+                                                        <label class="form-check-label" for="urdu-politics">
+                                                            Current Affairs / Politics
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-religion" id="urdu-religion">
+                                                        <label class="form-check-label" for="urdu-religion">
+                                                            Religion / Spirituality
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-poetry" id="urdu-poetry">
+                                                        <label class="form-check-label" for="urdu-poetry">
+                                                            Poetry
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-afsanay" id="urdu-afsanay">
+                                                        <label class="form-check-label" for="urdu-afsanay">
+                                                            Urdu Afsanay
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-children" id="urdu-children">
+                                                        <label class="form-check-label" for="urdu-children">
+                                                            Children's Books
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="urdu-bio" id="urdu-bio">
+                                                        <label class="form-check-label" for="urdu-bio">
+                                                            (Auto)biographies
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-2 py-2">
+                                <label for="publishername"><h4>Publisher</h4></label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="publishername" placeholder="Publisher Name" aria-label="Publisher Name">
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <div class="row g-3 py-2">
+                            <div class="col-md-3">
+                                <button class="btn btn-success" type="submit" form="filterform" value="Submit" id="submit_button">Submit</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-danger" type="reset" form="filterform" value="Cancel">Reset All Fields</button>
+                            </div>
+                        </div>
+
+                        <div class="row py-2">
+                            <div class="col-md-12">
+                                <p>If you couldn't find the book you were looking for, please get in touch with us through the contact form in the About Us page, and we'll see what we can do.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+
+            <br>
+            <footer class="container-fluid mt-2">
+                <div class="footer-wrap">
+                    Created by Abdul Ahad for Aptech Vision 2021.
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="JS pages\modal.js" type="text/javascript"></script>
+        <script src="JS pages\purchase.js" type="text/javascript"></script>
+        
+    </body>
+</html>

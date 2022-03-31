@@ -1,0 +1,75 @@
+.site-wrap {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.footer-wrap {
+    font-family: "Times New Roman", "Times", serif;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    color: lightgray;
+    background: black;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+@media all and (min-width: 992px) {
+	.dropdown-menu li{ position: relative; 	}
+	.nav-item .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-3px;
+	}
+	.nav-item .submenu-left{ 
+		right:100%; left:auto;
+	}
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{ display: block; }
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+}	
+/* ============ small devices .end// ============ */
+.dm-large {
+    min-width: 20rem !important;
+}
+
+.bg-image {
+    background-image: url('banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.bk-grid {
+    max-width: 200px;
+    max-height: 310px;
+    height: auto;
+    margin: auto;
+}
+
+.bk-img {
+    margin: auto;
+    max-width: 250px;
+    height: auto;
+}
+
+.bk-small {
+    margin: auto;
+    max-width: 120px;
+    height: 200px;
+}

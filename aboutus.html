@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>About Us | Gulshan Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            div.jumbotron ul {
+                list-style-type: none;
+            }
+            div.jumbotron li a {
+                text-decoration: none;
+                color: black;
+            }
+            div.jumbotron li a:hover {
+                text-decoration: underline;
+                background-color: white;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="site-wrap">
+
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <a class="navbar-brand" href="index.html">
+                            <img src="GL Logo.png" class="img-fluid" alt="Gulshan Library Logo">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-toggle" href="#Browse" data-bs-toggle="collapse">Browse our books</a>
+                                    <ul class="dropdown-menu collapse" id="Browse">
+
+                                        <li><a class="dropdown-item" href="browse.html">Latest</a></li>
+                                        <li><a class="dropdown-item" href="browse.html">Popular</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+
+                                        <li>
+                                            <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Genres">Genres</a>
+                                            <ul class="dropdown-menu collapse submenu" id="Genres">
+
+                                                <li>
+                                                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Fiction">Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Fiction">
+                                                        <li><a class="dropdown-item" href="browse.html">Action / Adventure</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Thriller / Mystery</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Classics / Historical</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Young / New Adult</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Comics / Graphic Novels</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#NonFiction">Non-Fiction</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="NonFiction">
+                                                        <li><a class="dropdown-item" href="browse.html">(Auto)biographies</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Self-help</a></li>
+                                                        <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Reference">Reference</a>
+                                                            <ul class="dropdown-menu collapse submenu" id="Reference">
+                                                                <li><a class="dropdown-item" href="browse.html">Mathematics</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Science</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">History</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Current Affairs / Politics</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Business / Finance</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Religion / Spirituality</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Travel Guides</a></li>
+                                                                <li><a class="dropdown-item" href="browse.html">Hobbies</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Children">Children's Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Children">
+                                                        <li><a class="dropdown-item" href="browse.html">Infants (0 - 3 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Toddlers (3 - 6 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Pre-School (6 - 9 Years)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Juvenile (9 - 12 Years)</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a class="dropdown-item dropdown-toggle" data-bs-toggle="collapse" href="#Urdu">Urdu Books</a>
+                                                    <ul class="dropdown-menu collapse submenu" id="Urdu">
+                                                        <li><a class="dropdown-item" href="browse.html">Urdu Adab (Literature)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Travelogues</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Current Affairs / Politics</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Religion / Spirituality</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Poetry</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Urdu Afsanay (Short-stories)</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">Children's Books</a></li>
+                                                        <li><a class="dropdown-item" href="browse.html">(Auto)biographies</a></li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="aboutus.html">About Us</a>
+                                </li>
+
+                            </ul>
+
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Log in</a>
+                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-end dm-large">
+
+                                        <form class="px-4 py-3" onsubmit="return false">
+
+                                            <div class="mb-3">
+                                                <label for="u_name" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="u_name" placeholder="Enter your username">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="p_word" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="p_word" placeholder="Enter your password">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                                    <label class="form-check-label" for="dropdownCheck">Remember me</label>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary" id="login">Sign in</button>
+
+                                        </form>
+
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="forgot.html">Forgot password?</a>
+
+                                    </div>
+                                </li>
+
+                                <span class="navbar-text">
+                                    or
+                                </span>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="registration.html">Register</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <div class="container-fluid">
+                    <div class="jumbotron bg-image px-2">
+                        <div class="page-header">
+                            <h1 class="fst-italic mb-5 display-1" style="font-family: fantasy; color: green">Gulshan Library</h1>
+                            <img src="GL Logo.png" alt="Logo" style="width: 250px; height: auto;">
+                            <br><br><br><br><br><br><br><br>
+                            <figure class="text-end mt-5">
+                                <blockquote class="blockquote fst-italic">
+                                    <p>“Show me a family of readers, <br>and I will show you the people who move the world.”</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer fs-6">
+                                    <cite title="Source Title">Napoleon Bonaparte</cite>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion" id="toc">
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mission_text" aria-expanded="false" aria-controls="mission_text">
+                            <h2 class="accordion-header" id="mission">Our Mission</h2>
+                        </button>
+                        <div id="mission_text" class="accordion-collapse collapse px-3" aria-labelledby="mission" data-bs-parent="#toc">
+                            <p class="text-wrap fs-5 lh-base text-start">
+                                In recent times, it has become increasingly difficult, and ever more important, to find a good, clean and safe place where children and adults alike can 
+                                come to indulge in the simple joy of opening a book and being transported to a different realm. The cost of buying new books also proves 
+                                to be another hindrance, resulting in the coming generations being deprived of the wonders of the written word. Our mission is to address this 
+                                deficiency, and to enrich the lives of our community by empowering its citizens’ personal, educational and professional growth. The library is 
+                                dedicated to advancing literacy and fostering a habit of life-long learning in our patrons.
+                            </p>
+                            <figure class="text-end">
+                                <blockquote class="blockquote fst-italic">
+                                    <p>“The faintest ink is more powerful <br>than the strongest memory”</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer fs-6">
+                                    <cite title="Source Title">Chinese Proverb</cite>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#values_text" aria-expanded="false" aria-controls="values_text">
+                            <h2 class="accordion-header" id="values">Our Values</h2>
+                        </button>
+                        <div id="values_text" class="accordion-collapse collapse px-3" aria-labelledby="values" data-bs-parent="#toc">
+                            <p class="text-wrap fs-5 lh-base text-start">
+                                We aim to help make the community of Karachi a vibrant, informed, cohesive, and empowered people. In order to accomplish this, we pledge to:
+                                <ul class="fs-5">
+                                    <li>Recognize users as our primary focus.</li>
+                                    <li>Innovate and be proactive in our approach.</li>
+                                    <li>Promote equity of access to information.</li>
+                                    <li>Encourage reading and literacy habits in both children and adults alike.</li>
+                                    <li>Aspire to be a flexible and experimental organization that encourages innovation and staff collaboration.</li>
+                                </ul>
+                            </p>
+                            <figure class="text-end">
+                                <blockquote class="blockquote fst-italic">
+                                    <p>“Reading should not be presented to children as a chore, a duty.<br>
+                                        It should be offered as a gift.”</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer fs-6">
+                                    <cite title="Source Title">Kate DiCamillo</cite>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#works_text" aria-expanded="false" aria-controls="works_text">
+                            <h2 class="accordion-header" id="works">How it Works</h2>
+                        </button>
+                        <div id="works_text" class="accordion-collapse collapse px-3" aria-labelledby="values" data-bs-parent="#toc">
+                            <div class="accordion" id="faq">
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button text-wrap fs-5 lh-base text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            OK, so how exactly does this whole deal work?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faq">
+                                        <div class="accordion-body text-wrap fs-5 lh-base text-start">
+                                            <strong>Simple.</strong> You have three tiers of membership from which you can choose; basic, advanced, and premium. You pay for the membership either online or in-person.
+                                            Then, based on your rental allowance, you can borrow a certain number of books every month for a pre-determined period. We will come and deliver the books to your house, and 
+                                            when your rental period is up, we will come and collect the book from you in-person. Alternatively, you could always pick-up and drop-off the books in-person at our library.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button text-wrap fs-5 lh-base text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            What are the membership tiers?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq">
+                                        <div class="accordion-body text-wrap fs-5 lh-base text-start">
+                                            <ul>
+                                                <li><strong>Basic tier: </strong>3 book rentals per month, plus 2 additional for good standing. Rental period of 15 days &#8212; Rs. 500.00/month.</li>
+                                                <li><strong>Advanced tier: </strong>5 book rentals per month, plus 3 additional for good standing. Rental period of 25 days &#8212; Rs. 1000.00/month.</li>
+                                                <li><strong>Premium tier: </strong>10 book rentals per month, plus 5 additional for good standing. Rental period of 35 days &#8212; Rs. 1500.00/month.</li>
+                                            </ul>
+                                            <p>
+                                                In case you're wondering about the difference between the rental periods and the membership period (1 month), your rental period for each book starts from the time it comes into your
+                                                possession. So, for example, if you borrow 3 books at once in the basic tier, you will have 15 days before you'll have to return all 3 books, but if you borrow them at different times 
+                                                during the month, the return period will be different for each book; 15 days from when you borrowed each book.<br><br>
+                                                Please note that if your rental period extends beyond your membership renewal deadline (as in the case of the premium tier), then the return date will be your membership renewal deadline, 
+                                                unless you renew your membership in advance. Additional days, in the case of advance renewal, will be carried over.<br><br>
+                                                It is possible to request for an extension on the rental period, especially for literature books, and provided that it doesn't conflict with your membership renewal deadline, provided that 
+                                                you discuss this with the staff when you place your order. It will be the staff's decision on whether to grant you the extension or refuse it, however and the patron will be expected to respect it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button text-wrap fs-5 lh-base text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Which membership tier is appropriate for me?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faq">
+                                        <div class="accordion-body text-wrap fs-5 lh-base text-start">
+                                            If you're just interested in reading literature books (fiction or non-fiction), we'd recommend going for the basic tier. If you need to borrow some books in addition to literature books, like reference 
+                                            books for your studies, or books for your children in addition to books for yourself, we'd recommend the advanced tier. The premium tier is really meant for either the most serious readers, or those 
+                                            people who may need to borrow lots of reference books for research material.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button text-wrap fs-5 lh-base text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            What's this about good standing?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faq">
+                                        <div class="accordion-body text-wrap fs-5 lh-base text-start">
+                                            This is a status that is conferred by the library staff, at their discretion. Please note that we <strong>WILL NOT</strong> entertain requests to upgrade a patron's standing.<br><br>
+                                            Simply put, there are three statuses that a customer can have; neutral standing, which all customers will start at, good standing, and bad standing. In order to get good standing, 
+                                            you just have to be a good patron! This means that you pay your fees on time, return books on, or even ahead, of time, and in good condition. The bad standing status is the exact opposite.<br><br>
+                                            Maintaining a good standing is easy, and will result in the privilege of additional rentals and the staff being more open to rental period extensions, provided that it is discussed with them before-hand.
+                                            Having a bad standing will, therefore, result in the staff being more strict, and if maintained for a long period of time, may result in your membership not being renewed.<br><br>
+                                            Please note that your standing will <strong>NOT </strong>have any impact on the fees that you are charged.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button text-wrap fs-5 lh-base text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            What's preventing someone from borrowing the books and not returning them?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faq">
+                                        <div class="accordion-body text-wrap fs-5 lh-base text-start">
+                                            While this is certainly a risk, we prefer to believe in the better side of people. However, we enforce a zero-tolerance policy for such behavior. If a patron should refuse to return our books, then we will 
+                                            cancel their membership immediately and pursue legal action against them. They will also be banned from our library permanently.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="text-end">
+                                <blockquote class="blockquote fst-italic">
+                                    <p>“The more that you read, the more things you will know.<br>
+                                        The more that you learn, the more places you’ll go.”</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer fs-6">
+                                    <cite title="Source Title">Dr. Seuss</cite>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button text-start fs-5 lh-base collapsed alert alert-primary" type="button" data-bs-toggle="collapse" data-bs-target="#contact_text" aria-expanded="false" aria-controls="contact_text">
+                            <h2 class="accordian-header mb-0" id="contact">Contact Us</h2>
+                        </button>
+                        <div id="contact_text" class="accordion-collapse collapse px-3" aria-labelledby="contact" data-bs-parent="#toc">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <h3 class="text-center">Contact Information</h3>
+                                    <ul style="list-style-type: none" class="text-wrap fs-5 lh-base text-start">
+                                        <br><li><strong>Address:</strong> 120-C, B Commercial Area, Phase 1. Defence Housing Authority (DHA) Karachi-75500, Pakistan</li><br>
+                                        <li><strong>Tel:</strong> +92-213-5388678, +92-335-1234567 (Whatsapp)</li><br>
+                                        <li><strong>Fax:</strong> 92-21-35680640</li><br>
+                                        <li><strong>E-mail:</strong> gulshan_library.info@gmail.com</li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h3 class="text-center">Contact Form</h3>
+                                    <form id="contactform" action="" method="POST" onsubmit="event.preventDefault();verifyContact();">
+                                        <div class="row g-3 py-2">
+
+                                            <div class="col-md-6 form-floating">
+                                                    <input type="text" class="form-control" id="fname" placeholder="First name" aria-label="First name" pattern="[a-zA-Z]+" onkeydown="return alphaOnly(event);" required>
+                                                    <label for="fname">First Name</label>
+                                            </div>
+                    
+                                            <div class="col-md-6 form-floating">
+                                                    <input type="text" class="form-control" id="lname" placeholder="Last name" aria-label="Last name" pattern="[a-zA-Z]+" onkeydown="return alphaOnly(event);" required>
+                                                    <label for="lname">Last Name</label>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="contact_no">Contact Number</label>
+                    
+                                                <div class="input-group mb-12">
+                                                    <span class="input-group-text" id="country_code">+92</span>
+                                                    <input type="tel" id="contact_no" maxlength="10" class="form-control" placeholder="1234567890" aria-label="Contact Number" aria-describedby="contactwarningBlock" pattern="\d*" required>
+                                                </div>
+                    
+                                                <div id="contactwarningBlock" class="form-text">
+                                                    Please enter a valid Pakistan phone number without any spaces or dashes.
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 form-floating">
+                                                <input type="email" class="form-control" id="emailID" placeholder="name@example.com" required>
+                                                <label for="emailID">Email address</label>
+                                            </div>
+                    
+                                            <div class="col-md-6 form-floating">
+                                                <input type="text" class="form-control" id="username" placeholder="Enter your desired username" aria-describedby="userwarningBlock" maxlength="50" minlength="8">
+                                                <label for="username">Username (if available)</label>
+                                            </div>
+
+                                            <div class="col-md-12 form-floating">
+                                                <textarea class="form-control" id="comments" placeholder="We're happy to hear from you!" style="height: 90px;" required></textarea>
+                                                <label for="comments" class="form-label">Your Comments</label>
+                                            </div>
+
+                                            <div id="errors" style="display: none; color: red;"></div>
+                    
+                                        </div>
+                                    </form>
+
+                                    <div class="row g-3 py-2">
+                                        <div class="col-md-2">
+                                            <button class="btn btn-success" type="submit" form="contactform" value="Submit" id="submit_button">Submit</button>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-danger" type="reset" form="contactform" value="Cancel">Cancel</button>
+                                        </div>
+                                    </div><br>
+
+                                    <figure class="text-end">
+                                        <blockquote class="blockquote fst-italic">
+                                            <p>“Read, in the Name of your Lord Who created—<br>
+                                                created humans from a clinging clot.<br>
+                                                Read! And your Lord is the Most Generous,<br>
+                                                Who taught by the pen—<br>
+                                                taught humanity what they knew not.”</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer fs-6">
+                                            <cite title="Source Title">Al-Quran (96: 1-5)</cite>
+                                        </figcaption>
+                                    </figure>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="container-fluid mt-5">
+                <div class="footer-wrap">
+                    Created by Abdul Ahad for Aptech Vision 2021. Banner image from PNG Tree. Get more <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="JS pages\login.js" type="text/javascript"></script>
+        <script src="JS pages\contactVerify.js" type="text/javascript"></script>
+        
+    </body>
+</html>
